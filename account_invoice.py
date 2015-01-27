@@ -41,8 +41,8 @@ class account_invoice_line(osv.osv):
 	                        for picking in picking_obj.browse(cr,uid,picking_ids):
         	                        if picking.pack_operation_ids:
 						for pack_operation in picking.pack_operation_ids:
-							if pack_operation.lot_id.name and pack_operation.product_id.id == r.product_id.id:
-								serial_number = pack_operation.lot_id.name
+							if pack_operation.lot_id.ref and pack_operation.product_id.id == r.product_id.id:
+								serial_number = pack_operation.lot_id.ref
 				res[r.id] = serial_number		
 			else:
 	                        res[r.id] = 'N/A'
