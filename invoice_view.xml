@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <record model="ir.ui.view" id="account_invoice_form_serial_number">
+            <field name="name">account.invoice.form.serial_number</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+		<data>
+		    <xpath
+                	expr="/form/sheet/notebook/page[@string='Invoice Lines']/field[@name='invoice_line']/tree[@string='Invoice Lines']/field[@name='account_id']" position="after">
+        	       	 <field name="serial_number"/>
+	            </xpath>
+		</data>
+            </field>
+        </record>
+        
+</data>
+</openerp>
